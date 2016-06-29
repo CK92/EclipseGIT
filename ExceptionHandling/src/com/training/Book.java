@@ -66,8 +66,36 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+
+
 	
+
+
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return this.bookNumber;
+	}
 	
+	@Override
+	public boolean equals(Object obj){
+		// TODO Auto-generated method stub
+		if(this == obj)     // same location
+			return true;
+		if(obj == null)
+			return false;
+		if(getClass()!=obj.getClass())   // same class
+			return false;
+		
+		Book bk = (Book)obj;
+		return bk.bookNumber == this.bookNumber &&
+				bk.price == this.price &&
+				bk.bookName.equals(this.bookName);
+		
+		
+	}
 	
 	
 }
